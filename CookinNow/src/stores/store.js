@@ -29,7 +29,7 @@ export const useAuthStore = defineStore('auth', {
       this.email = null
       this.role = null
     },
-    login(token, email, role) {
+    login({token, email, role}) {
       this.token = token
       this.email = email
       this.role = role

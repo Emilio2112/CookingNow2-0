@@ -45,7 +45,7 @@ export default {
     async loginUser() {
       const response = await API.login(this.newUser);
       if (response.error) {
-        alert("Error creating account");
+        alert("Error login into account");
       } else {
         this.authStore.login({token:response.token, email: response.email, role: response.role})
         this.$router.push({ name: "homeadmin" });
