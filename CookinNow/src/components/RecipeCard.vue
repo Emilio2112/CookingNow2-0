@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="card">
-            <div class="name">{{ recipe.name }}</div>
+            <div class="name">{{ recipe }}</div>
         </div>
 
     </div>

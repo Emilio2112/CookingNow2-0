@@ -1,32 +1,26 @@
 <template>
   <div>
     Aqui va un listado de recetas
-    {{ recipes }}
-    <RecipeCard :recipe="recipe"/>
+    <div v-if="recipes">
+      <RecipeCard :recipe="recipes[0]"/>
+
+    </div>
   </div>
 </template>
 <script setup>
 import RecipeCard from "../components/RecipeCard.vue";
-import getAllRecipes from "../Services/api";
+import API from "../Services/api";
 </script>
 <script>
 export default {
   data() {
     return {
-      recipe: {},
+      recipes: [],
     };
   },
 
-  beforeCreate() {
-    getAllRecipes
-      .getAllRecipes()
-      .then((res) => {
-        console.log(this.recipe);
-        this.recipe = res.recipe;
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  async created() {
+    this.recipes = await API.getAllRecipes()
   },
 };
 </script>

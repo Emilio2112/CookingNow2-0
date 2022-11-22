@@ -28,8 +28,12 @@ async function login(newUser) {
 }
 
 async function getAllRecipes() {
-  const result = await API.get("/recipes");
-  return result;
+  try {
+    const result = await API.get("/recipes");
+    return result.data;
+  } catch (error) {
+    return { error: error.message };
+  }
 }
 
 export default {
