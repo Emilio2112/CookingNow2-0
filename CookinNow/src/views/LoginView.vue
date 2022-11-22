@@ -48,7 +48,14 @@ export default {
         alert("Error login into account");
       } else {
         this.authStore.login({token:response.token, email: response.email, role: response.role})
-        this.$router.push({ name: "homeadmin" });
+        if(this.authStore.isAdmin){
+          this.$router.push({ name: "homeadmin" })
+          console.log(this.authStore.isAdmin)
+        } else {
+          console.log(this.authStore.isAdmin)
+          this.$router.push({ name: "homeUser" })
+        }
+        
       }
     },
   },

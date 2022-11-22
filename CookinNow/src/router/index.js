@@ -3,6 +3,7 @@ import SignupView from '../views/SignupView.vue'
 import LoginView from '../views/LoginView.vue'
 import HomeAdmin from '../views/HomeAdmin.vue'
 import HomeView from '../views/HomeView.vue'
+import Home from '../views/Home.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,7 +30,16 @@ const router = createRouter({
       meta: {
         requiresAuth: true
       }
+    },
+    {
+      path: '/user',
+      name: 'homeUser',
+      component: Home,
+      meta: {
+        requiresAuth: true
+      }
     }
+
   ]
 })
 
