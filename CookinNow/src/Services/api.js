@@ -44,9 +44,32 @@ async function getRecipeById(id) {
     return { error: error.message };
   }
 }
+
+async function createUser(newUser) {
+  try {
+    const result = await API.post("/users/", newUser)
+    console.log(result);
+    return result.data
+  } catch (error) {
+    return { error: error.message };
+  }
+}
+
+
+async function createIng(newIng) {
+  try {
+    const result = await API.post("/ingredients/", newIng)
+    return result.data
+  } catch (error) {
+    return { error: error.message };
+  }
+}
+
 export default {
   signup,
   login,
   getAllRecipes,
-  getRecipeById
+  getRecipeById,
+  createUser,
+  createIng
 };
