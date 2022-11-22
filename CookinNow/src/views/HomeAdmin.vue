@@ -1,40 +1,72 @@
 <template>
   <div>
-    <div>
-    <label
-      >Recetas
-      <select name="" id="">
-        <option value="Añadir Receta">Añadir Receta</option>
-        <option value="Modificar Receta">Modificar Receta</option>
-        <option value="Eliminar Receta">Eliminar Receta</option>
-      </select>
-    </label>
-    </div>
-    <div>
-      <label
-        >Ingredientes
-        <select name="" id="">
-          <option value="Añadir Ingredientes">Añadir Ingredientes</option>
-          <option value="Modificar Ingredientes">Modificar Ingredientes</option>
-          <option value="Eliminar Ingredientes">Eliminar Ingredientes</option>
-        </select>
-      </label>
-    </div>
-    <div>
-      <label
-        >Usuarios
-        <select name="" id="">
-          <option value="Añadir Usuarios">Añadir Usuarios</option>
-          <option value="Modificar Usuarios">Modificar Usuarios</option>
-          <option value="Eliminar Usuarios">Eliminar Usuarios</option>
-        </select>
-      </label>
-    </div>
-  </div>
+  <ul class="main-links">
+    <li class="dropdown-li">
+      Recetas
+      <ul class="dropdown">
+        <li>Modificar recetas </li>
+        <li>Eliminar receta</li>
+        <li>Añadir recetas</li>
+      </ul>
+    </li>
+    <li class="dropdown-li">
+      Ingredientes
+      <ul class="dropdown">
+        <li>Modificar  ingredientes</li>
+        <li>Eliminar ingredientes</li>
+        <li>Añadir  ingredientes</li>
+      </ul>
+    </li>
+    <li class="dropdown-li">
+      Usuarios
+      <ul class="dropdown">
+        <li>Modificar  usuarios</li>
+        <li>Eliminar usuarios</li>
+        <li>Añadir  usuarios</li>
+      </ul>
+    </li>
+  </ul>
+</div>
 </template>
 
 <script>
 export default {};
 </script>
 
-<style scoped></style>
+<style scoped>
+.main-links {
+  display: flex;
+  gap: 200px;
+  list-style: none;
+  font-family: monospace;
+  font-size : 30px
+}
+.main-links li {
+  padding:  10px;
+  background-color: rgb(242,143,75);
+}
+
+.dropdown-li {
+  position: relative;
+}
+
+.dropdown-li:hover .dropdown {
+  display: block;
+  opacity: 2;
+}
+
+.dropdown {
+  margin: 0;
+  width: 150%;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  opacity: 0;
+  display: none;
+  background: rgb(242,143,75);
+}
+
+.dropdown li {
+  list-style: none;
+}
+</style>

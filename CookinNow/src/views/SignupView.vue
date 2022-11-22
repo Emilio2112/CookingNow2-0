@@ -21,7 +21,7 @@
       <div class="inputContainer">
         <label>
           <input
-            type="text"
+            type="email"
             v-model.trim="newUser.email"
             placeholder="Enter your email"
         /></label>
