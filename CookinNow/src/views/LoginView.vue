@@ -53,7 +53,7 @@ export default {
           console.log(this.authStore.isAdmin)
         } else {
           console.log(this.authStore.isAdmin)
-          this.$router.push({ name: "homeUser" })
+          this.$router.push({ name: "homeUser"})
         }
         
       }
