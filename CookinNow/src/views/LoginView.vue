@@ -5,11 +5,11 @@
 <h3 class="title">Login</h3>
   
       <div class="inputContainer">
-      <label> <input type="text" v-model="newUser.email"  placeholder ="Enter your email"/></label>
+      <label> <input type="text" v-model.trim="newUser.email"  placeholder ="Enter your email"/></label>
   </div>
       <div class="inputContainer">
       <label
-        > <input type="password" v-model="newUser.password"
+        > <input type="password" v-model.trim="newUser.password"
       placeholder ="Enter your password"/></label>
 </div>
       <button class="submitBtn" @click.prevent="loginUser()">Entrar</button>

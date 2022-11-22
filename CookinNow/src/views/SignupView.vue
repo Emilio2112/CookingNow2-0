@@ -6,7 +6,7 @@
         <label>
           <input
             type="text"
-            v-model="newUser.name"
+            v-model.trim="newUser.name"
             placeholder="Enter your name"
         /></label>
       </div>
@@ -14,7 +14,7 @@
         <label>
           <input
             type="text"
-            v-model="newUser.username"
+            v-model.trim="newUser.username"
             placeholder="Enter your username"
         /></label>
       </div>
@@ -22,7 +22,7 @@
         <label>
           <input
             type="text"
-            v-model="newUser.email"
+            v-model.trim="newUser.email"
             placeholder="Enter your email"
         /></label>
       </div>
@@ -30,7 +30,7 @@
         <label>
           <input
             type="password"
-            v-model="newUser.password"
+            v-model.trim="newUser.password"
             placeholder="Enter your password"
         /></label>
       </div>
