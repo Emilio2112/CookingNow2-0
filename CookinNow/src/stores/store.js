@@ -20,7 +20,7 @@ export const useAuthStore = defineStore('auth', {
       return this.token
     },
     isAdmin() {
-      return this.role === 'Administrador'
+      return this.role === 'administrador'
     }
   },
   actions: {
