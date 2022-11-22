@@ -1,7 +1,7 @@
 <template>
   <div>
     Aqui va un listado de recetas
-    <div v-if="recipes">
+    <div v-if="recipes.length > 0">
       <RecipeCard :recipe="recipes[0]"/>
 
     </div>

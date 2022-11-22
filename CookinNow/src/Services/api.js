@@ -36,8 +36,17 @@ async function getAllRecipes() {
   }
 }
 
+async function getRecipeById(id) {
+  try {
+    const result = await API.get(`/recipes/${id}`)
+    return result.data;
+  } catch (error) {
+    return { error: error.message };
+  }
+}
 export default {
   signup,
   login,
   getAllRecipes,
+  getRecipeById
 };
