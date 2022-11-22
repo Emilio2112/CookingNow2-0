@@ -33,9 +33,12 @@ const router = createRouter({
   ]
 })
 
+import { useAuthStore } from '../stores/store'
+
 router.beforeEach((to,_,next)=> {
-  const token = localStorage.getItem('token')
-  if(to.meta.requiresAuth && !token) {
+  const authStore = useAuthStore()
+
+  if(to.meta.requiresAuth && !authStore.isLoggedIn) {
     next({name: 'login'})
   } else {
     next()

@@ -7,7 +7,7 @@
         <span class="bar"></span>
         <span class="bar"></span>
       </a>
-      <div class="navbar-links" v-if="!token">
+      <div class="navbar-links" v-if="!authStore.isLoggedIn">
         <RouterLink to="/login">Login</RouterLink> /
         <RouterLink to="/signup">SignUp</RouterLink>
       </div>
@@ -19,19 +19,17 @@
 </template>
 
 <script>
-const token = localStorage.getItem("token");
-const email = localStorage.getItem("email");
+import { useAuthStore } from '../stores/store'
 
 export default {
   data() {
     return {
-      token,
+      authStore: useAuthStore()
     };
   },
   methods: {
     logout() {
-      localStorage.removeItem("token");
-      localStorage.removeItem("email");
+      this.authStore.logout()
       this.$router.push({ name: "login" });
     },
   },

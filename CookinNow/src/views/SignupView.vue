@@ -42,6 +42,7 @@
 </template>
 
 <script setup>
+import { useAuthStore } from '../stores/store'
 import API from "../Services/api.js";
 </script>
 
@@ -55,6 +56,7 @@ export default {
         email: "",
         password: "",
       },
+      authStore: useAuthStore()
     };
   },
 
@@ -64,6 +66,7 @@ export default {
       if (response.error) {
         alert("Error creating account");
       } else {
+        this.authStore.login({token:response.token, email: response.email, role: response.role})
         this.$router.push({ name: "home" });
       }
     },

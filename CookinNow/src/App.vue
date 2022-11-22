@@ -1,10 +1,9 @@
 <template>
   <div>
-    <header class="header">
-      <headerPage />
-    </header>
+    <headerPage />
 
     <RouterView />
+
     <footerPage />
   </div>
 </template>
