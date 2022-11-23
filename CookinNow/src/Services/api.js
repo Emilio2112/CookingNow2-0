@@ -1,4 +1,5 @@
 import axios from "axios";
+import {useAuthStore} from '../stores/store'
 
 const API = axios.create({
   baseURL: "https://cookingnow.onrender.com/api",
@@ -58,7 +59,9 @@ async function createUser(newUser) {
 
 async function createIng(newIng) {
   try {
-    const result = await API.post("/ingredients/", newIng)
+    const authStore = useAuthStore()
+   
+    const result = await API.post("/ingredients/", newIng, {headers: {token: authStore.userToken}})
     return result.data
   } catch (error) {
     return { error: error.message };

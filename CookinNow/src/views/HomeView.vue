@@ -1,12 +1,12 @@
 <template>
-  <div>
-    Aqui va un listado de recetas
-    <div v-if="recipes.length > 0">
-      <RecipeCard :recipe="recipes[0]"/>
+  <div class="container">
 
-    </div>
+      <RecipeCard  v-for = "recipe in recipes" :key = "idx" :recipe="recipe"/>
+
+
   </div>
 </template>
+
 <script setup>
 import RecipeCard from "../components/RecipeCard.vue";
 import API from "../Services/api";
@@ -25,4 +25,12 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.container{
+display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+</style>
