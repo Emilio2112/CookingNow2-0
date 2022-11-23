@@ -20,10 +20,6 @@ export default {
     };
   },
 
-  async created() {
-    this.recipes = await API.getAllRecipes();
-  },
-
   methods: {
     async listRecipesByName() {
         const result = await API.getAllRecipes();

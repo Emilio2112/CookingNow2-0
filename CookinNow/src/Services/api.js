@@ -80,10 +80,10 @@ async function getIngredients() {
   }
 }
 
-async function searchRecipe() {
+async function searchRecipeDiet(diet) {
   try {
     const authStore = useAuthStore()
-    const result = await API.get("/recipes/", {headers: {token: authStore.userToken}})
+    const result = await API.get(`/recipes/diet/${diet}`, {headers: {token: authStore.userToken}})
     return result.data;
   } catch (error) {
     return { error: error.message };    
@@ -98,5 +98,6 @@ export default {
   createUser,
   createIng,
   createRecipe,
-  getIngredients
+  getIngredients,
+  searchRecipeDiet
 };

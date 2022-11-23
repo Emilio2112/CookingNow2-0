@@ -1,21 +1,34 @@
 <template>
   <div class="contenedor">
-    <button class="button">Recetas Veganas</button>
-    <button class="button">Recetas Vegetarianas</button>
-    <button class="button">Recetas Omnivoras</button>
+    <button @click="getRecipesByDiet('vegano')" class="button">Recetas Veganas</button>
+    <button @click="getRecipesByDiet('vegetariano')" class="button">Recetas Vegetarianas</button>
+    <button @click="getRecipesByDiet('omnivoro')" class="button">Recetas Omnivoras</button>
     <SearchBar />
+    <RecipeCard  v-for = "(recipe, idx) in recipes" :key = "idx" :recipe="recipe"/>
   </div>
 </template>
 
 <script setup>
 import SearchBar from '../components/SearchBar.vue';
 import API from "../Services/api";
+import RecipeCard from '../components/RecipeCard.vue';
 
 </script>
 
 <script>
 export default {
-
+  data() {
+    return {
+      recipes: [],
+    }
+  },
+  methods: {
+    async getRecipesByDiet(diet) {
+      const result = await API.searchRecipeDiet(diet) 
+      console.log(diet);
+      this.recipes = result
+    }
+  }
 };
 </script>
 
