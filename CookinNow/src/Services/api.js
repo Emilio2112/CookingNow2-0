@@ -37,15 +37,6 @@ async function getAllRecipes() {
   }
 }
 
-async function getRecipeById(id) {
-  try {
-    const result = await API.get(`/recipes/${id}`)
-    return result.data;
-  } catch (error) {
-    return { error: error.message };
-  }
-}
-
 async function createUser(newUser) {
   try {
     const result = await API.post("/users/", newUser)
@@ -60,7 +51,7 @@ async function createUser(newUser) {
 async function createIng(newIng) {
   try {
     const authStore = useAuthStore()
-   
+   //requerir token para realizar acciones
     const result = await API.post("/ingredients/", newIng, {headers: {token: authStore.userToken}})
     return result.data
   } catch (error) {
@@ -68,11 +59,33 @@ async function createIng(newIng) {
   }
 }
 
+async function createRecipe(newRecipe) {
+  try {
+    const authStore = useAuthStore()
+   //requerir token para realizar acciones
+    const result = await API.post("/recipes/", newRecipe, {headers: {token: authStore.userToken}})
+    return result.data
+  } catch (error) {
+    return { error: error.message };
+  }
+}
+
+async function getByDish(query) {
+  try {
+    const result = await API.get(`/recipes/dish/${query}`);
+    return result.data;
+  } catch (error) {
+    return { error: error.message };
+  }
+}
+
+
 export default {
   signup,
   login,
   getAllRecipes,
-  getRecipeById,
   createUser,
-  createIng
+  createIng,
+  createRecipe,
+  getByDish
 };

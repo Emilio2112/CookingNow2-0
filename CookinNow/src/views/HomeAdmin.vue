@@ -4,6 +4,7 @@
       <li class="dropdown-li">
         Recetas
         <ul class="dropdown">
+          <RouterLink to="/admin/recipe-create" >Crear recetas</RouterLink>
           <li>Modificar recetas</li>
           <li>Eliminar receta</li>
           <li>Añadir recetas</li>
@@ -12,6 +13,7 @@
       <li class="dropdown-li">
         Ingredientes
         <ul class="dropdown">
+          <RouterLink to="/admin/ing-create" >Crear ingredientes</RouterLink>
           <li>Modificar ingredientes</li>
           <li>Eliminar ingredientes</li>
           <li>Añadir ingredientes</li>
@@ -20,6 +22,7 @@
       <li class="dropdown-li">
         Usuarios
         <ul class="dropdown">
+          <RouterLink to="/admin/usercreate" >Crear usuarios</RouterLink>
           <li>Modificar usuarios</li>
           <li>Eliminar usuarios</li>
           <li>Añadir usuarios</li>
