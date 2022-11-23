@@ -6,6 +6,7 @@ import HomeView from "../views/HomeView.vue";
 import Home from "../views/Home.vue";
 import CreateUser from "../components/CreateUser.vue";
 import CreateIngredient from "../components/CreateIngredient.vue";
+import CreateRecipe from "../components/CreateRecipe.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -50,6 +51,11 @@ const router = createRouter({
       path: "/admin/ing-create",
       name: "ingCreate",
       component: CreateIngredient,
+    },
+    {
+      path: "/admin/recipe-create",
+      name: "recipeCreate",
+      component: CreateRecipe,
     },
   ],
 });
