@@ -1,7 +1,7 @@
 <template>
   <div class="container">
 
-      <RecipeCard  v-for = "recipe in recipes" :key = "idx" :recipe="recipe"/>
+      <RecipeCard  v-for = "(recipe, idx) in recipes" :key = "idx" :recipe="recipe"/>
 
 
   </div>

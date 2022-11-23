@@ -3,11 +3,20 @@
     <button class="button">Recetas Veganas</button>
     <button class="button">Recetas Vegetarianas</button>
     <button class="button">Recetas Omnivoras</button>
+    <SearchBar />
   </div>
 </template>
 
+<script setup>
+import SearchBar from '../components/SearchBar.vue';
+import API from "../Services/api";
+
+</script>
+
 <script>
-export default {};
+export default {
+
+};
 </script>
 
 <style scoped>

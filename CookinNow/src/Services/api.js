@@ -70,19 +70,20 @@ async function createRecipe(newRecipe) {
   }
 }
 
-async function getByDish(query) {
-  try {
-    const result = await API.get(`/recipes/dish/${query}`);
-    return result.data;
-  } catch (error) {
-    return { error: error.message };
-  }
-}
-
 async function getIngredients() {
   try {
     const authStore = useAuthStore()
     const result = await API.get("/ingredients/", {headers: {token: authStore.userToken}})
+    return result.data;
+  } catch (error) {
+    return { error: error.message };    
+  }
+}
+
+async function searchRecipe() {
+  try {
+    const authStore = useAuthStore()
+    const result = await API.get("/recipes/", {headers: {token: authStore.userToken}})
     return result.data;
   } catch (error) {
     return { error: error.message };    
@@ -97,6 +98,5 @@ export default {
   createUser,
   createIng,
   createRecipe,
-  getByDish,
   getIngredients
 };
