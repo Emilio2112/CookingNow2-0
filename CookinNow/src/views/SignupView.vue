@@ -75,13 +75,6 @@ export default {
 </script>
 
 <style scoped>
-body {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  background-color: white;
-  font-family: "lato", sans-serif;
-}
 .contact-us {
   margin: 100px auto;
   border: 2px solid rgba(0, 0, 0, 1);
