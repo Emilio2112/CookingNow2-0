@@ -79,6 +79,16 @@ async function getByDish(query) {
   }
 }
 
+async function getIngredients() {
+  try {
+    const authStore = useAuthStore()
+    const result = await API.get("/ingredients/", {headers: {token: authStore.userToken}})
+    return result.data;
+  } catch (error) {
+    return { error: error.message };    
+  }
+}
+
 
 export default {
   signup,
@@ -87,5 +97,6 @@ export default {
   createUser,
   createIng,
   createRecipe,
-  getByDish
+  getByDish,
+  getIngredients
 };
