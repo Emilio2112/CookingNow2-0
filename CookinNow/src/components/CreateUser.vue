@@ -1,31 +1,31 @@
 <template>
   <div class="container">
-    <label
-      >name
+    <label class="inputContainer"
+      >Nombre
       <input type="text" v-model.trim="newUser.name" />
     </label>
-    <label
-      >username
+    <label class="inputContainer"
+      >Usuario
       <input type="text" v-model.trim="newUser.username" />
     </label>
-    <label
-      >email
+    <label class="inputContainer"
+      >Email
       <input type="email" v-model.trim="newUser.email" />
     </label>
-    <label
-      >password
+    <label class="inputContainer"
+      >Contraseña
       <input type="password" v-model.trim="newUser.password" />
     </label>
-    <label
-      >diet
+    <label class="inputContainer"
+      >Dieta
       <select v-model="newUser.diet">
         <option value="vegano">Vegano</option>
         <option value="vegetariano">Vegetariano</option>
         <option value="omnivoro">Omnívoro</option>
       </select>
     </label>
-    <label
-      >role
+    <label class="inputContainer"
+      >ROL
       <select v-model="newUser.role">
         <option value="usuario">Usuario</option>
         <option value="administrador">Administrador</option>
@@ -82,9 +82,6 @@ export default {
   ;
 }
 
-.title {
-  align-self: center;
-}
 .inputContainer {
   font-size: 20px;
   display: flex;
@@ -95,7 +92,11 @@ export default {
 }
 label {
   margin-top: 2%;
+  margin-left: 5%;
+  font-size: 20px;
+
 }
+
 input {
   margin-top: 2%;
   border-radius: 7px;
@@ -125,9 +126,8 @@ textarea {
 
 }
 
-.submitBtn {
-  margin-left: 5%;
-  margin-bottom: 5%;
+button {
+  margin: 5%;
   border-radius: 7px;
   font-family: monospace;
   background-color: #fff;
@@ -138,34 +138,13 @@ textarea {
   font-weight: bolder;
   padding: 8px 15px;
   cursor: pointer;
-}
+} 
 
-.submitBtn:active {
+button:active {
   background-color: rgb(242, 143, 75);
   transform: translateY(-2px);
 }
 
-.addIng {
-  margin-top: 2%;
-  border-radius: 7px;
-  font-family: monospace;
-  font-size: 20px;
-  font-weight: bolder;
-  padding: 8px 15px;
-  cursor: pointer;
-  background-color: #fff;
-  color: rgb(242, 143, 75);
-  border: none;
-}
 
-.addIng:active {
-  background-color: rgb(242, 143, 75);
-  transform: translateY(-2px);
-}
-
-li {
-  list-style: none;
-  font-size: 20px;
-}
 
 </style>
