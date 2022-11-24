@@ -32,5 +32,6 @@ display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin-top: 10px;
+    margin-bottom: 60px;
 }
 </style>

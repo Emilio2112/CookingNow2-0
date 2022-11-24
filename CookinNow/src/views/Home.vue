@@ -1,18 +1,29 @@
 <template>
   <div class="contenedor">
-    <button @click="getRecipesByDiet('vegano')" class="button">Recetas Veganas</button>
-    <button @click="getRecipesByDiet('vegetariano')" class="button">Recetas Vegetarianas</button>
-    <button @click="getRecipesByDiet('omnivoro')" class="button">Recetas Omnivoras</button>
-    <SearchBar />
-    <RecipeCardComplete  v-for = "(recipe, idx) in recipes" :key = "idx" :recipe="recipe"/>
+    <div class="botones">
+      <button @click="getRecipesByDiet('vegano')" class="button">
+        Recetas Veganas
+      </button>
+      <button @click="getRecipesByDiet('vegetariano')" class="button">
+        Recetas Vegetarianas
+      </button>
+      <button @click="getRecipesByDiet('omnivoro')" class="button">
+        Recetas Omnivoras
+      </button>
+    </div>
+      <SearchBar class="search" />
+      <RecipeCardComplete
+        v-for="(recipe, idx) in recipes"
+        :key="idx"
+        :recipe="recipe"
+      />
   </div>
 </template>
 
 <script setup>
-import SearchBar from '../components/SearchBar.vue';
+import SearchBar from "../components/SearchBar.vue";
 import API from "../Services/api";
-import RecipeCardComplete from '../components/RecipeCardComplete.vue';
-
+import RecipeCardComplete from "../components/RecipeCardComplete.vue";
 </script>
 
 <script>
@@ -20,15 +31,15 @@ export default {
   data() {
     return {
       recipes: [],
-    }
+    };
   },
   methods: {
     async getRecipesByDiet(diet) {
-      const result = await API.searchRecipeDiet(diet) 
+      const result = await API.searchRecipeDiet(diet);
       console.log(diet);
-      this.recipes = result
-    }
-  }
+      this.recipes = result;
+    },
+  },
 };
 </script>
 
@@ -39,7 +50,6 @@ export default {
   flex-wrap: wrap;
   justify-content: space-around;
   align-content: flex-start;
-  padding: 10px 105px;
   margin-bottom: 60px;
 }
 .button {
@@ -62,13 +72,24 @@ export default {
 .button:active {
   transform: translateY(4px);
 }
-@media(min-width:768px){
-  .contenedor{
-    padding: 10px 105px;
+@media (min-width: 768px) {
+  .contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
   }
+  .botones button {
+    margin: auto;
+    margin-top: 10px;
+  }
+.search {
+    margin-top: 10px;
+  }
+
 }
-@media(min-width:1024px){
-  .contenedor{
+@media (min-width: 1024px) {
+  .contenedor {
     padding: 10px 105px;
   }
 }

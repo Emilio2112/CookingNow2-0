@@ -8,13 +8,13 @@
       />
       <button @click="listRecipesByName">Buscar</button>
     </div>
-    <RecipeCard v-for="(recipe, idx) in recipes" :key="idx" :recipe="recipe" />
+    <RecipeCardComplete v-for="(recipe, idx) in recipes" :key="idx" :recipe="recipe" />
   </div>
 </template>
 
 <script setup>
 import API from "../Services/api";
-import RecipeCard from "../components/RecipeCard.vue";
+import RecipeCardComplete from "../components/RecipeCardComplete.vue";
 </script>
 
 <script>

@@ -21,44 +21,39 @@ export default {
 
 <style scoped>
 .card {
-  width: 200px;
-  height: 200px;
-  border: 2px black solid;
-  margin-bottom: 5%;
-  color: black;
-  background-color: rgb(242,143,75);
-  text-align: center
+  width: 100%;
+  display: flex;
+  max-width: 1100px;
 }
-.name {
-  font-size: 100%;
-  font-family: monospace;
+.card-body {
+  width: 100%;
+  margin: 20px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+  cursor: default;
+  transition: all 400ms ease;
+  text-align: center;
+}
+.card-body:hover {
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3%);
+}
+.card-title {
 
+  text-align: center;
 }
-p{
-  font-family: monospace;
-}
+
 a {
   text-decoration: none;
   display: inline-block;
   padding: 10px;
-  margin-top: 10px;
-  background-color: white;
+  margin: 10px ;
   color: #e07f17;
-  border: 1px solid #ff8605;
-  border-radius: 4px;
-  transition: all 400ms ease;
-}
-a:hover {
-  background-color: #ff8400;
-  text-decoration: none;
-  display: inline-block;
-  padding: 10px;
-  margin-top: 10px;
-  color: #fff;
   border: 1px solid #e07f17;
   border-radius: 4px;
   transition: all 400ms ease;
 }
-
 
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <label
       >name
       <input type="text" v-model.trim="newUser.name" />
@@ -68,4 +68,104 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+
+.container {
+  font-family: monospace;
+  display: flex;
+  flex-direction: column;
+  width: 860px;
+  margin: 100px auto;
+  margin-bottom: 60px;
+  background-color: rgb(242, 143, 75);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  ;
+}
+
+.title {
+  align-self: center;
+}
+.inputContainer {
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-left: 2%;
+}
+label {
+  margin-top: 2%;
+}
+input {
+  margin-top: 2%;
+  border-radius: 7px;
+  font-family: monospace;
+  font-size: 20px;
+
+}
+select {
+  margin-top: 2%;
+  border-radius: 7px;
+  font-family: monospace;
+  font-size: 20px;
+
+}
+textarea {
+  margin-top: 2%;
+  border-radius: 7px;
+  font-family: monospace;
+}
+.inputIng {
+  margin-top: 2%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 2%;
+  margin-left: 2%;
+  font-size: 20px;
+
+}
+
+.submitBtn {
+  margin-left: 5%;
+  margin-bottom: 5%;
+  border-radius: 7px;
+  font-family: monospace;
+  background-color: #fff;
+  color: rgb(242, 143, 75);
+  border: none;
+  font-size: 20px;
+  transition: all 0.5s;
+  font-weight: bolder;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.submitBtn:active {
+  background-color: rgb(242, 143, 75);
+  transform: translateY(-2px);
+}
+
+.addIng {
+  margin-top: 2%;
+  border-radius: 7px;
+  font-family: monospace;
+  font-size: 20px;
+  font-weight: bolder;
+  padding: 8px 15px;
+  cursor: pointer;
+  background-color: #fff;
+  color: rgb(242, 143, 75);
+  border: none;
+}
+
+.addIng:active {
+  background-color: rgb(242, 143, 75);
+  transform: translateY(-2px);
+}
+
+li {
+  list-style: none;
+  font-size: 20px;
+}
+
+</style>

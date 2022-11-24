@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h2 class="title">Nueva Receta</h2>
+    <h1 class="title">Nueva Receta</h1>
     <div>
       <label class="inputContainer"
         >Nombre
@@ -42,7 +42,7 @@
         <textarea
           v-model.trim="newRecipe.preparation"
           rows="10"
-          cols="45"
+          cols="70"
         ></textarea>
       </label>
       <label class="inputIng"
@@ -141,19 +141,19 @@ export default {
   font-family: monospace;
   display: flex;
   flex-direction: column;
-  margin-left: 2%;
-  margin-right: 2%;
-  margin-top: 5%;
+  width: 860px;
+  margin: 100px auto;
   margin-bottom: 60px;
   background-color: rgb(242, 143, 75);
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  ;
 }
 
 .title {
   align-self: center;
 }
 .inputContainer {
-  font-size: calc(16px, 1vw);
+  font-size: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -167,11 +167,15 @@ input {
   margin-top: 2%;
   border-radius: 7px;
   font-family: monospace;
+  font-size: 20px;
+
 }
 select {
   margin-top: 2%;
   border-radius: 7px;
   font-family: monospace;
+  font-size: 20px;
+
 }
 textarea {
   margin-top: 2%;
@@ -184,6 +188,8 @@ textarea {
   flex-direction: column;
   margin-right: 2%;
   margin-left: 2%;
+  font-size: 20px;
+
 }
 
 .submitBtn {
@@ -194,7 +200,7 @@ textarea {
   background-color: #fff;
   color: rgb(242, 143, 75);
   border: none;
-  font-size: calc(16px, 1vw);
+  font-size: 20px;
   transition: all 0.5s;
   font-weight: bolder;
   padding: 8px 15px;
@@ -210,7 +216,7 @@ textarea {
   margin-top: 2%;
   border-radius: 7px;
   font-family: monospace;
-  font-size: calc(16px, 1vw);
+  font-size: 20px;
   font-weight: bolder;
   padding: 8px 15px;
   cursor: pointer;
@@ -226,6 +232,7 @@ textarea {
 
 li {
   list-style: none;
+  font-size: 20px;
 }
 
 </style>
