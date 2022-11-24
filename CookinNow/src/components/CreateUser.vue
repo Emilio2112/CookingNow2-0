@@ -111,20 +111,6 @@ select {
   font-size: 20px;
 
 }
-textarea {
-  margin-top: 2%;
-  border-radius: 7px;
-  font-family: monospace;
-}
-.inputIng {
-  margin-top: 2%;
-  display: flex;
-  flex-direction: column;
-  margin-right: 2%;
-  margin-left: 2%;
-  font-size: 20px;
-
-}
 
 button {
   margin: 5%;
@@ -144,7 +130,5 @@ button:active {
   background-color: rgb(242, 143, 75);
   transform: translateY(-2px);
 }
-
-
 
 </style>
