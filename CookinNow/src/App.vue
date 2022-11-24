@@ -21,5 +21,7 @@ export default {};
 <style>
 body {
   margin: 0;
+  background-image: url(./assets/images/iStock-473891870.jpg);
 }
+
 </style>

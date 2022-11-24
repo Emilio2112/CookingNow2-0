@@ -1,9 +1,18 @@
 <template>
+ 
+
   <div class="container">
-
-      <RecipeCard  v-for = "(recipe, idx) in recipes" :key = "idx" :recipe="recipe"/>
-
-
+    <div
+        class="grid-block"
+        style="
+          background-image: url(https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/british_shakshuka_26737_16x9.jpg);
+          width: 100%;
+          height: 120vh;
+          background-size: contain;
+          background-repeat: no-repeat;
+        "
+      ></div>
+    <RecipeCard v-for="(recipe, idx) in recipes" :key="idx" :recipe="recipe" />
   </div>
 </template>
 
@@ -20,18 +29,24 @@ export default {
   },
 
   async created() {
-    this.recipes = await API.getAllRecipes()
+    this.recipes = await API.getAllRecipes();
   },
 };
 </script>
 
 <style scoped>
-.container{
-display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 10px;
-    margin-bottom: 60px;
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 60px;
 }
+
+.grid-block {
+background-size: cover;
+}
+
 </style>
