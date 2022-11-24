@@ -1,17 +1,6 @@
 <template>
- 
-
   <div class="container">
-    <div
-        class="grid-block"
-        style="
-          background-image: url(https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/british_shakshuka_26737_16x9.jpg);
-          width: 100%;
-          height: 160vh;
-          background-size: contain;
-          background-repeat: no-repeat;
-        "
-      ></div>
+    <div class="grid-block" style=""></div>
     <RecipeCard v-for="(recipe, idx) in recipes" :key="idx" :recipe="recipe" />
   </div>
 </template>
@@ -35,7 +24,25 @@ export default {
 </script>
 
 <style scoped>
+@media (min-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 60px;
+  }
 
+  .grid-block {
+    background-size: cover;
+    background-image: url(https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/british_shakshuka_26737_16x9.jpg);
+    width: 100%;
+    height: 160vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
 .container {
   display: flex;
   flex-direction: row;
@@ -46,7 +53,11 @@ export default {
 }
 
 .grid-block {
-background-size: cover;
+  background-size: cover;
+  background-image: url(https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/british_shakshuka_26737_16x9.jpg);
+  width: 100%;
+  height: 160vh;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
-
 </style>
