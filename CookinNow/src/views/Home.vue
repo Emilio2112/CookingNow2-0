@@ -4,14 +4,14 @@
     <button @click="getRecipesByDiet('vegetariano')" class="button">Recetas Vegetarianas</button>
     <button @click="getRecipesByDiet('omnivoro')" class="button">Recetas Omnivoras</button>
     <SearchBar />
-    <RecipeCard  v-for = "(recipe, idx) in recipes" :key = "idx" :recipe="recipe"/>
+    <RecipeCardComplete  v-for = "(recipe, idx) in recipes" :key = "idx" :recipe="recipe"/>
   </div>
 </template>
 
 <script setup>
 import SearchBar from '../components/SearchBar.vue';
 import API from "../Services/api";
-import RecipeCard from '../components/RecipeCard.vue';
+import RecipeCardComplete from '../components/RecipeCardComplete.vue';
 
 </script>
 
@@ -36,7 +36,7 @@ export default {
 .contenedor {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-content: flex-start;
 }
