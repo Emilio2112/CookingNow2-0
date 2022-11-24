@@ -1,13 +1,13 @@
 <template>
   <div class="container">
-    <h2 class="title">Crear nueva receta</h2>
-    <div class="detailrecipe">
+    <h2 class="title">Nueva Receta</h2>
+    <div>
       <label class="inputContainer"
-        >name
+        >Nombre
         <input type="text" v-model.trim="newRecipe.name" />
       </label>
       <label class="inputContainer"
-        >diet
+        >Dieta
         <select v-model="newRecipe.diet">
           <option value="vegano">Vegano</option>
           <option value="vegetariano">Vegetariano</option>
@@ -15,7 +15,7 @@
         </select>
       </label>
       <label class="inputContainer"
-        >dishType
+        >Tipo de plato
         <select v-model="newRecipe.dishType">
           <option value="primer plato">primer plato</option>
           <option value="segundo plato ">segundo plato</option>
@@ -26,11 +26,11 @@
       </label>
 
       <label class="inputContainer"
-        >time
+        >Tiempo
         <input type="text" v-model.trim="newRecipe.time" />
       </label>
       <label class="inputContainer"
-        >difficulty
+        >Dificultad
         <select v-model="newRecipe.difficulty">
           <option value="facil">facil</option>
           <option value="medio">medio</option>
@@ -38,17 +38,17 @@
         </select>
       </label>
       <label class="inputContainer"
-        >preparation
+        >Preparación
         <textarea
           v-model.trim="newRecipe.preparation"
           rows="10"
-          cols="50"
+          cols="45"
         ></textarea>
       </label>
       <label class="inputIng"
-        >ingredients
+        >Ingredientes
         <select v-model.trim="ingredient">
-          <option value="">Select Ingredient</option>
+          <option value="">Selecciona Ingrediente</option>
           <option
             v-for="(ing, idx) in ingredientList"
             :key="idx"
@@ -57,14 +57,16 @@
             {{ ing.name }}
           </option>
         </select>
-        Cantidad
-        <input type="text" v-model.trim="quantity" />
-        <button  @click="addIngredient">Añadir</button>
+        <label
+          >Cantidad
+          <input type="text" v-model.trim="quantity" />
+        </label>
+        <button class="addIng" @click="addIngredient">Añadir</button>
       </label>
       <div>
         <ul>
           <li v-for="(ingAdd, idx) in listIngredientsByName" :key="idx">
-            {{ ingAdd.name }} - {{ingAdd.quantity}}
+            {{ ingAdd.name }} - {{ ingAdd.quantity }}
           </li>
         </ul>
       </div>
@@ -101,15 +103,15 @@ export default {
   },
   computed: {
     listIngredientsByName() {
-      return this.newRecipe.ingredients.map (element => {
+      return this.newRecipe.ingredients.map((element) => {
         return {
-          name: this.ingredientList.filter(el => {
-            return el._id === element.ingredient
+          name: this.ingredientList.filter((el) => {
+            return el._id === element.ingredient;
           })[0].name,
-          quantity: element.quantity
-        }
-      })
-    }
+          quantity: element.quantity,
+        };
+      });
+    },
   },
   methods: {
     async createRecipe() {
@@ -136,76 +138,94 @@ export default {
 
 <style scoped>
 .container {
-  margin: 100px auto;
-  border: 2px solid rgba(0, 0, 0, 1);
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-  background-color: rgb(242, 143, 75);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 600px;
-  padding: 20px 40px;
   font-family: monospace;
-  font-size: calc(16px + 1vw);
+  display: flex;
+  flex-direction: column;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 5%;
+  margin-bottom: 60px;
+  background-color: rgb(242, 143, 75);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .title {
-
+  align-self: center;
 }
 .inputContainer {
-  display: block;
-  width: 90%;
-  margin-bottom: 17px;
+  font-size: calc(16px, 1vw);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-left: 2%;
 }
-
+label {
+  margin-top: 2%;
+}
 input {
-  top: 0px;
-  left: 0px;
-  height: 100%;
-  width: 30%;
-  border: 1px solid #dadce0;
+  margin-top: 2%;
   border-radius: 7px;
-  font-size: 16px;
-  padding: 0 20px;
-  outline: none;
-  background: none;
+  font-family: monospace;
+}
+select {
+  margin-top: 2%;
+  border-radius: 7px;
+  font-family: monospace;
+}
+textarea {
+  margin-top: 2%;
+  border-radius: 7px;
+  font-family: monospace;
+}
+.inputIng {
+  margin-top: 2%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 2%;
+  margin-left: 2%;
 }
 
 .submitBtn {
-  display: block;
-  margin-left: auto;
-  padding: 15px 30px;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  border-radius: 7px;
+  font-family: monospace;
+  background-color: #fff;
+  color: rgb(242, 143, 75);
   border: none;
-  background-color: rgb(242, 143, 75);
-  color: white;
-  border-radius: 6px;
+  font-size: calc(16px, 1vw);
+  transition: all 0.5s;
+  font-weight: bolder;
+  padding: 8px 15px;
   cursor: pointer;
-  font-size: 16px;
-  margin-top: 30px;
 }
-.submitBtn:hover {
-  background-color: #9867c5;
+
+.submitBtn:active {
+  background-color: rgb(242, 143, 75);
   transform: translateY(-2px);
 }
 
-.inputIng {
-  display: flex;
-  justify-content: space-around;
+.addIng {
+  margin-top: 2%;
+  border-radius: 7px;
+  font-family: monospace;
+  font-size: calc(16px, 1vw);
+  font-weight: bolder;
+  padding: 8px 15px;
+  cursor: pointer;
+  background-color: #fff;
+  color: rgb(242, 143, 75);
+  border: none;
 }
 
-
-.detailrecipe {
-  background-color: white;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-
+.addIng:active {
+  background-color: rgb(242, 143, 75);
+  transform: translateY(-2px);
 }
 
 li {
   list-style: none;
 }
-
 
 </style>

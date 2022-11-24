@@ -39,6 +39,8 @@ export default {
   flex-wrap: wrap;
   justify-content: space-around;
   align-content: flex-start;
+  padding: 10px 105px;
+  margin-bottom: 60px;
 }
 .button {
   display: flex;
@@ -46,7 +48,7 @@ export default {
   margin-bottom: 10px;
   font-family: monospace;
   font-size: calc(16px + 1vw);
-  color: white;
+  color: black;
   background-color: rgb(242, 143, 75);
   border: none;
   border-radius: 8px;
@@ -59,5 +61,15 @@ export default {
 
 .button:active {
   transform: translateY(4px);
+}
+@media(min-width:768px){
+  .contenedor{
+    padding: 10px 105px;
+  }
+}
+@media(min-width:1024px){
+  .contenedor{
+    padding: 10px 105px;
+  }
 }
 </style>

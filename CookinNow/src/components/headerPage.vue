@@ -1,18 +1,21 @@
 <template>
   <div class="header">
-    <nav class="navbar">
-      <a href="/">
-        <img src="../assets/images/cookingnow.png" />
-      </a>
-
-      <div id="navbar-links"  class="navbar-links" v-if="!authStore.isLoggedIn">
-        <RouterLink style="text-decoration: none; color: inherit" to="/login">Login</RouterLink> 
-        <RouterLink style="text-decoration: none; color: inherit" to="/signup">SignUp</RouterLink>
-      </div>
-      <div class="navbar-links" v-else>
-        <button @click="logout">Logout</button>
-      </div>
+    <nav class="logo">
+      <RouterLink to="/"
+        ><img src="../assets/images/cookingnow.png"
+      /></RouterLink>
     </nav>
+    <div id="navbar-links" class="navbar-links" v-if="!authStore.isLoggedIn">
+      <RouterLink style="text-decoration: none; color: inherit" to="/login"
+        >Login</RouterLink
+      >
+      <RouterLink style="text-decoration: none; color: inherit" to="/signup"
+        >SignUp</RouterLink
+      >
+    </div>
+    <div class="navbar-links" v-else>
+      <button @click="logout">Logout</button>
+    </div>
   </div>
 </template>
 
@@ -34,37 +37,110 @@ export default {
 };
 </script>
 
-<style scoped>
-.header{
+<style scoped>.header {
   background-color: rgb(242, 143, 75);
-  position: sticky;
-  top:0;
-  left: 0;
-  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  margin: 10px;
 }
 
 img {
-  margin-top: 10px;
-  margin-left: 20px;
-  margin-bottom: 10px;
-  width: 60px;
-  height: 40px;
-}
-.navbar {
-  display: flex;
-  position: relative;
-  justify-content: space-between;
-  align-items: center;
-  color: white;
+  width: 45%;
 }
 
-.navbar-links {
-  height: 100%;
-  text-decoration: none;
-  margin-right: 20px;
-  display: flex;
-  justify-content: space-between;
-  width: 120px;
-
+.navbar-links a {
+  justify-content: end;
+  text-align: center;
+  margin-right: 10px;
+  padding: 14px;
+  align-content: center;
+  font-size: calc(16px + 1vw);
+  font-family: monospace;
 }
+.navbar-links a:hover {
+  background-color: azure;
+  border-radius: 30px;
+  color: rgb(242, 143, 75);
+}
+
+button {
+  font-family: monospace;
+  border-radius: 4px;
+  background-color: #fff;
+  border: none;
+  color: rgb(242, 143, 75);
+  text-align: center;
+  font-size: 20px;
+  padding: 20px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-right: 15px;
+}
+@media (min-width: 768px) {
+  img {
+    width: 30%;
+  }
+  .navbar-links a {
+    justify-content: end;
+    text-align: center;
+    margin-right: 10px;
+    padding: 14px;
+    align-content: center;
+    font-size: calc(20px + 2vw);
+    font-family: monospace;
+  }
+  button {
+    font-family: monospace;
+    border-radius: 4px;
+    background-color: #fff;
+    border: none;
+    color: rgb(242, 143, 75);
+    text-align: center;
+    font-size: 22px;
+    padding: 20px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-right: 15px;
+  }
+}
+@media (min-width: 1024px) {
+  .logo {
+    margin-left: 30px;
+  }
+  img {
+    width: 20%;
+  }
+
+  .navbar-links a {
+    justify-content: end;
+    text-align: center;
+    margin-left: 20px;
+    padding: 14px;
+    align-content: center;
+    font-size: calc(16px + 1vw);
+    font-family: monospace;
+  }
+  button {
+    font-family: monospace;
+    border-radius: 4px;
+    background-color: #fff;
+    border: none;
+    color: rgb(242, 143, 75);
+    text-align: center;
+    font-size: 26px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-right: 15px;
+  }
+}
+
 </style>
