@@ -15,9 +15,9 @@ export default {
   width: 100%;
   font-size: calc(5px + 1vw);
   text-align: center;
-  position: absolute;
   bottom: 0;
   height: 40px;
   color: white;
+  position:fixed;
 }
 </style>

@@ -149,7 +149,7 @@ input {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    width: 600px;
+    width: 500px;
   }
 }
 </style>

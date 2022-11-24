@@ -35,13 +35,12 @@ export default {
 </script>
 
 <style scoped>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
+.header{
+  background-color: rgb(242, 143, 75);
+  position: sticky;
+  top:0;
+  left: 0;
+  width: 100%;
 }
 
 img {
@@ -56,13 +55,7 @@ img {
   position: relative;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(242, 143, 75);
   color: white;
-}
-
-.brand-title {
-  font-size: 1.5rem;
-  margin: 0.5rem;
 }
 
 .navbar-links {

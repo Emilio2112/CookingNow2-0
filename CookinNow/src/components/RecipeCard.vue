@@ -55,7 +55,7 @@ a {
   transition: all 400ms ease;
 }
 a:hover {
-  background-color: red;
+  background-color: #ff8400;
   text-decoration: none;
   display: inline-block;
   padding: 10px;

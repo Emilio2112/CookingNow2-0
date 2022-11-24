@@ -18,4 +18,8 @@ import headerPage from "./components/headerPage.vue";
 export default {};
 </script>
 
-<style scoped></style>
+<style>
+body {
+  margin: 0;
+}
+</style>

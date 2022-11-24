@@ -4,7 +4,7 @@
     <div class="detailrecipe">
       <label class="inputContainer"
         >name
-        <input class="campos" type="text" v-model.trim="newRecipe.name" />
+        <input type="text" v-model.trim="newRecipe.name" />
       </label>
       <label class="inputContainer"
         >diet
@@ -27,7 +27,7 @@
 
       <label class="inputContainer"
         >time
-        <input class="campos" type="text" v-model.trim="newRecipe.time" />
+        <input type="text" v-model.trim="newRecipe.time" />
       </label>
       <label class="inputContainer"
         >difficulty
@@ -40,7 +40,6 @@
       <label class="inputContainer"
         >preparation
         <textarea
-          class="campos"
           v-model.trim="newRecipe.preparation"
           rows="10"
           cols="50"
@@ -59,13 +58,13 @@
           </option>
         </select>
         Cantidad
-        <input class="campos" type="text" v-model.trim="quantity" />
-        <button class="submitBtn" @click="addIngredient">Añadir</button>
+        <input type="text" v-model.trim="quantity" />
+        <button  @click="addIngredient">Añadir</button>
       </label>
       <div>
         <ul>
           <li v-for="(ingAdd, idx) in listIngredientsByName" :key="idx">
-            {{ ingAdd }}
+            {{ ingAdd.name }} - {{ingAdd.quantity}}
           </li>
         </ul>
       </div>
@@ -148,19 +147,19 @@ export default {
   width: 600px;
   padding: 20px 40px;
   font-family: monospace;
+  font-size: calc(16px + 1vw);
 }
 
 .title {
+
 }
 .inputContainer {
-  position: relative;
   display: block;
   width: 90%;
   margin-bottom: 17px;
 }
 
 input {
-  position: absolute;
   top: 0px;
   left: 0px;
   height: 100%;
@@ -171,7 +170,6 @@ input {
   padding: 0 20px;
   outline: none;
   background: none;
-  z-index: 1;
 }
 
 .submitBtn {
@@ -192,11 +190,10 @@ input {
 }
 
 .inputIng {
-  display: block;
+  display: flex;
+  justify-content: space-around;
 }
-.campos {
 
-}
 
 .detailrecipe {
   background-color: white;
@@ -204,6 +201,10 @@ input {
   justify-content: space-around;
   flex-direction: column;
 
+}
+
+li {
+  list-style: none;
 }
 
 
