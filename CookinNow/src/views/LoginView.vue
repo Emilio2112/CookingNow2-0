@@ -68,7 +68,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: white;
-  font-family: "lato", sans-serif;
+  font-family: monospace;
 }
 .contact-us {
   margin: 100px auto;
@@ -86,6 +86,8 @@ body {
 .title {
   font-size: 40px;
   margin-bottom: 50px;
+  font-family: monospace;
+
 }
 .inputContainer {
   position: relative;
