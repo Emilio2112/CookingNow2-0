@@ -7,7 +7,7 @@
         style="
           background-image: url(https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/british_shakshuka_26737_16x9.jpg);
           width: 100%;
-          height: 120vh;
+          height: 160vh;
           background-size: contain;
           background-repeat: no-repeat;
         "
