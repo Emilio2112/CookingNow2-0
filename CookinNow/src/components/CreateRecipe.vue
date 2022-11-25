@@ -115,7 +115,6 @@ export default {
   },
   methods: {
     async createRecipe() {
-      console.log(this.newRecipe);
       const response = await API.createRecipe(this.newRecipe);
       if (response.error) {
         alert("Error creating recipe");
